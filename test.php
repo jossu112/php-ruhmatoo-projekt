@@ -5,6 +5,6 @@ function hello ($name){
 	
 	echo "Tere!";
 }
-
+sdfgsdfhgdfgsdfgrosdfg
 
 ?>

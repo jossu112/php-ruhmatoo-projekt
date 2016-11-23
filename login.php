@@ -20,7 +20,9 @@
 			
 			<input type="submit" value="Logi sisse">
 			<br><br>
-			<input type="submit" onclick="location.href='signup.php'" value="Loo kasutaja"/>
+			
+			
+			<a href = "signup.php" > Loo kasutaja </a>
 			
 		</form>
 		

@@ -50,5 +50,6 @@
 			
 			<br> <br>
 			
-			<input type="submit" value="Logi kasutaja">
+			<input type="submit" value="Loo kasutaja">
 		</form>
+			

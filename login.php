@@ -20,6 +20,11 @@
 			
 			<input type="submit" value="Logi sisse">
 			<br><br>
+
+			
+			
+			<a href = "signup.php" > Loo kasutaja </a>
+
 			
 		</form>
 	

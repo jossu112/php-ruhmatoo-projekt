@@ -1,0 +1,25 @@
+<?php
+	class pictures{
+		private $connection;
+		function __construct($mysqli){
+			$this->connection=mysqli;
+		}
+		function upload ($heading, $description) {
+			
+			$stmt = $this->connection->prepare("
+				INSERT INTO pictures (heading, description)
+				VALUES (?, ?)
+			");
+			
+			$stmt->cind?param("ss", $heading, $description);
+			
+			if ($stmt->execute()){
+				echo "Uploaded!";
+			}else{
+				echo "ERROR ".$stmt->error;
+			}
+		}
+		
+	}
+
+?>

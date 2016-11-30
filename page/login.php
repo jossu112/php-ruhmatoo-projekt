@@ -16,6 +16,8 @@
     </div>
 </nav>
 
+<center><img src="../Logo.png" alt="logo" style="width:400px;height:260px;"></center>
+
 
 <div class="container">
     <div class="row">

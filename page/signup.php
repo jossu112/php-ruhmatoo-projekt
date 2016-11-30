@@ -92,8 +92,8 @@
 	
 ?>
 
-<h1>Loo kasutaja</h1>
 
+<?php require("../header.php"); ?>
 
 <div class="container">
     <div class="row">
@@ -119,3 +119,6 @@
 			<input type="submit" value="Loo kasutaja">
 		</form>
 			
+
+			
+<?php require("../footer.php"); ?>

@@ -39,15 +39,22 @@
 	
 ?>
 
-<h1>Loo kasutaja</h1>
 
-<form method="POST">
+<div class="container">
+    <div class="row">
+        <div align="center">
+		
+			<div class="col-sm-4 col-md-3">
+			<h1>Logi sisse</h1>
+			<form method="POST">
 		
 			<label>E-post</label><br>
+			<div class="form-group">
 			<input name="signupEmail" type ="email" placeholder="E-mail"> <?php echo $signupEmailError;?>
 		
 			<br> <br>
 			<label>Password</label><br>
+			<div class="form-group">
 			<input name="signupPassword" type ="password" placeholder="Parool"> <?php echo $signupPasswordError;?>
 			
 			<br> <br>

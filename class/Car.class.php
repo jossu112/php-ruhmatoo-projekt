@@ -30,10 +30,10 @@ class Car {
 	
 	function getSingle($edit_id){
 
-		$stmt = $this->connection->prepare("SELECT series, year, color, power FROM cars_and_colors1 WHERE id=? AND deleted IS NULL");
+		$stmt = $this->connection->prepare("SELECT series, year, color, power, gearbox FROM cars WHERE id=? AND deleted IS NULL");
 
 		$stmt->bind_param("i", $edit_id);
-		$stmt->bind_result($series, $year, $color, $power);
+		$stmt->bind_result($series, $year, $color, $power, $gearbox);
 		$stmt->execute();
 		
 		//tekitan objekti
@@ -46,6 +46,7 @@ class Car {
 			$car->year = $year;
 			$car->color = $color;
 			$car->power = $power;
+			$car->gearbox = $gearbox;
 			
 			
 		}else{

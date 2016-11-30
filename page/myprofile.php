@@ -88,7 +88,9 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 
 
 
+
 <?php require("../header.php"); ?>
+
 <html>
 	<head>
 		<title>Minu bemm</title>
@@ -127,7 +129,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 			<input type="submit" value="SALVESTA">
 			
 			<br><br> 
-				
+
 		</form>
 		
 		<form action="myprofile.php" method="POST" enctype="multipart/form-data">
@@ -138,5 +140,8 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 		
 			
 	</body>
+
+</html>
 </html>
 <?php require("../footer.php"); ?>
+

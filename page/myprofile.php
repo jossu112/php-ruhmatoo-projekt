@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+<?php require("../header.php"); ?>
+
 <html>
 	<head>
 		<title>Minu bemm</title>
@@ -43,8 +45,7 @@
 				<input type="file" name="fileToUpload" id="fileToUpload">
 				<input type="submit" value="Upload Image" name="submit">
 			</form>			
-			
-			
+
 			
 	
 	
@@ -53,4 +54,8 @@
 		
 			
 	</body>
+
 </html>
+</html>
+<?php require("../footer.php"); ?>
+

@@ -1,6 +1,5 @@
 <?php
-
-	require("/home/johareil/config.php");
+	require("/home/kriskand/config.php");
 
 	/* ALUSTAN SESSIOONI */
 	session_start();

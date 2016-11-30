@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require("../header.php"); ?>
 <html>
 	<head>
 		<title>Sisselogimise lehekülg</title>
@@ -31,3 +32,4 @@
 			
 	</body>
 </html>
+<?php require("../footer.php"); ?>

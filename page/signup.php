@@ -1,3 +1,5 @@
+
+<?php require("../header.php"); ?>
 <?php	
 	
 	$signupEmailError = "";
@@ -52,4 +54,4 @@
 			
 			<input type="submit" value="Loo kasutaja">
 		</form>
-			
+<?php require("../footer.php"); ?>

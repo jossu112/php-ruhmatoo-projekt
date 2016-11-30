@@ -4,12 +4,11 @@
 
 
 <div class="container">
-	
-		<div class="row">
-		
-			<div class="col-sm-4 col-md-3">
-<html>
-	<head>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="Logo.png" alt="BWM logo" style="...">
+        </div>
+        <div class="col-md-3">
 		<title>Sisselogimise lehekülg</title>
 	</head>
 	<body>
@@ -19,10 +18,12 @@
 		<form method="POST">
 		
 			<label>E-post</label><br>
+			<div class="form-group">
 			<input name="loginEmail" type ="email" placeholder="E-mail">
-		
-			<br> <br>
 			
+			<br> <br>
+			<label>Parool</label><br>
+			<div class="form-group">
 			<input name="loginPassword" type ="password" placeholder="Parool">
 			
 			<br> <br>
@@ -37,7 +38,9 @@
 		
 		
 		
-			
+		</div>
+    </div>
+</div>			
 	</body>
 </html>
 <?php require("../footer.php"); ?>

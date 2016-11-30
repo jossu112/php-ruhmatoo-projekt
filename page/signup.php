@@ -45,8 +45,9 @@
         <div align="center">
 		
 			<div class="col-sm-4 col-md-3">
-			<h1>Logi sisse</h1>
+
 			<form method="POST">
+			<h1>Loo kasutaja</h1>
 		
 			<label>E-post</label><br>
 			<div class="form-group">

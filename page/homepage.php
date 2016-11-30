@@ -1,3 +1,6 @@
+
+
+<?php require("../header.php"); ?>
 <div class="container">
 	
 			<div class="row">
@@ -27,5 +30,9 @@
 
 
 <h2>Top 5</h2>
+<br><br>
 <h2>Minu Bemm</h2>
+<br><br>
 <h2>Hinda Bemme</h2>
+<br><br>
+<?php require("../footer.php"); ?>

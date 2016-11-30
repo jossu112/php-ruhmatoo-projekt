@@ -94,7 +94,18 @@
 
 <h1>Loo kasutaja</h1>
 
+
+<div class="container">
+    <div class="row">
+        <div align="center">
+		
+			<div class="col-sm-4 col-md-3">
+
+			<form method="POST">
+			<h1>Loo kasutaja</h1>
+
 <form method="POST">
+
 		
 			<label>E-post</label><br>
 			<input name="signupEmail" type ="email" placeholder="E-mail"> <?php echo $signupEmailError;?>

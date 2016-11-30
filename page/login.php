@@ -5,11 +5,10 @@
 
 <div class="container">
     <div class="row">
-        <div align="center">
-		
-			<div class="col-sm-4 col-md-3">
-<html>
-	<head>
+        <div class="col-md-6">
+            <img src="Logo.png" alt="BWM logo" style="...">
+        </div>
+        <div class="col-md-3">
 		<title>Sisselogimise lehekülg</title>
 	</head>
 	<body>
@@ -39,7 +38,9 @@
 		
 		
 		
-			
+		</div>
+    </div>
+</div>			
 	</body>
 </html>
 <?php require("../footer.php"); ?>

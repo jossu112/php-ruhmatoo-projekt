@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <?php require("../header.php"); ?>
 
+<nav class="navbar navbar-light bg-faded navbar-fixed-top" style="background-color: rgba(30, 144, 255, 0.33)">
+    <ul class="nav navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="sighnup.php" style="color: red"><span class="glyphicon glyphicon-fire"></span> NORM BEMM</a>
+        </li>
+        
+    </ul>
+    <div class="collapse navbar-collapse">
+
+   
+
+        </form>
+    </div>
+</nav>
 
 
 <div class="container">

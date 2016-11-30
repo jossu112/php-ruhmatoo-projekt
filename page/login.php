@@ -4,8 +4,8 @@
 
 
 <div class="container">
-	
-		<div class="row">
+    <div class="row">
+        <div align="center">
 		
 			<div class="col-sm-4 col-md-3">
 <html>
@@ -19,10 +19,12 @@
 		<form method="POST">
 		
 			<label>E-post</label><br>
+			<div class="form-group">
 			<input name="loginEmail" type ="email" placeholder="E-mail">
-		
-			<br> <br>
 			
+			<br> <br>
+			<label>Parool</label><br>
+			<div class="form-group">
 			<input name="loginPassword" type ="password" placeholder="Parool">
 			
 			<br> <br>

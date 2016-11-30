@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <?php require("../header.php"); ?>
+
+
+
+<div class="container">
+	
+		<div class="row">
+		
+			<div class="col-sm-4 col-md-3">
 <html>
 	<head>
 		<title>Sisselogimise lehekülg</title>

@@ -12,7 +12,7 @@ class Car {
 	/*TEISED FUNKTSIOONID */
 	function delete($id){
 
-		$stmt = $this->connection->prepare("UPDATE cars_and_colors1 SET deleted=NOW() WHERE id=? AND deleted IS NULL");
+		$stmt = $this->connection->prepare("UPDATE cars SET deleted=NOW() WHERE id=? AND deleted IS NULL");
 		$stmt->bind_param("i",$id);
 		
 		// kas õnnestus salvestada
@@ -26,87 +26,14 @@ class Car {
 		
 	}
 		
-	function get($q, $sort, $order) {
-		
-		$allowedSort = ["id", "model", "plate", "color", "information"];
-		
-		if(!in_array($sort, $allowedSort)){
-			//ei ole lubatud tulp
-			$sort = "id";
-		}
-		
-		$orderBy = "ASC";
-		
-		if($order == "DESC"){
-			$orderBy = "DESC";
-		}
-		echo "Sorteerin: ".$sort." ".$orderBy." ";
-		
-		//kas otsib
-		if ($q != ""){
-			
-			echo "Otsib: ".$q;
-			
-			$stmt = $this->connection->prepare("
-				SELECT id, model, plate, color, information
-				FROM cars_and_colors1
-				WHERE deleted IS NULL
-				AND (model LIKE ? OR plate LIKE ? OR color LIKE ? OR information LIKE ?)
-				ORDER BY $sort $orderBy
-			");
-			$searchWord = "%".$q."%";
-			$stmt->bind_param("ssss", $searchWord, $searchWord, $searchWord, $searchWord);
-					
-			
-		}else{
-			$stmt = $this->connection->prepare("
-				SELECT id, model, plate, color, information
-				FROM cars_and_colors1
-				WHERE deleted IS NULL
-				ORDER BY $sort $orderBy
-			");	
-		}
 	
-		
-		echo $this->connection->error;
-		
-		$stmt->bind_result($id, $model, $plate, $color, $information);
-		$stmt->execute();
-		
-		
-		//tekitan massiivi
-		$result = array();
-		
-		// tee seda seni, kuni on rida andmeid
-		// mis vastab select lausele
-		while ($stmt->fetch()) {
-			
-			//tekitan objekti
-			$car = new StdClass();
-			
-			$car->id = $id;
-			$car->model = $model;
-			$car->plate = $plate;
-			$car->carColor = $color;
-			$car->information = $information;
-			
-			//echo $plate."<br>";
-			// iga kord massiivi lisan juurde nr märgi
-			array_push($result, $car);
-		}
-		
-		$stmt->close();
-		
-		
-		return $result;
-	}
 	
 	function getSingle($edit_id){
 
-		$stmt = $this->connection->prepare("SELECT model, plate, color, information FROM cars_and_colors1 WHERE id=? AND deleted IS NULL");
+		$stmt = $this->connection->prepare("SELECT series, year, color, power FROM cars_and_colors1 WHERE id=? AND deleted IS NULL");
 
 		$stmt->bind_param("i", $edit_id);
-		$stmt->bind_result($model, $plate, $color, $information);
+		$stmt->bind_result($series, $year, $color, $power);
 		$stmt->execute();
 		
 		//tekitan objekti
@@ -115,10 +42,10 @@ class Car {
 		//saime ühe rea andmeid
 		if($stmt->fetch()){
 			// saan siin alles kasutada bind_result muutujaid
-			$car->model = $model;
-			$car->plate = $plate;
+			$car->series = $series;
+			$car->year = $year;
 			$car->color = $color;
-			$car->information = $information;
+			$car->power = $power;
 			
 			
 		}else{
@@ -136,13 +63,13 @@ class Car {
 		
 	}
 
-	function save ($model, $plate, $color, $information) {
+	function save ($series, $year, $color, $power, $gearbox) {
 		
-		$stmt = $this->connection->prepare("INSERT INTO cars_and_colors1 (model, plate, color, information) VALUES (?, ?, ?, ?)");
+		$stmt = $this->connection->prepare("INSERT INTO cars (series, year, color, power, gearbox) VALUES (?, ?, ?, ?, ?)");
 	
 		echo $this->connection->error;
 		
-		$stmt->bind_param("ssss", $model, $plate, $color, $information);
+		$stmt->bind_param("sssss", $series, $year, $color, $power, $gearbox);
 		
 		if($stmt->execute()) {
 			echo "salvestamine õnnestus";
@@ -155,10 +82,10 @@ class Car {
 		
 	}
 	
-	function update($id, $model, $plate, $color, $information){
+	function update($id, $series, $year, $color, $power, $gearbox){
     	
-		$stmt = $this->connection->prepare("UPDATE cars_and_colors1 SET model=?, plate=?, color=?, information=? WHERE id=? AND deleted IS NULL");
-		$stmt->bind_param("ssssi", $model, $plate, $color, $information, $id);
+		$stmt = $this->connection->prepare("UPDATE cars SET series=?, year=?, color=?, power=?, gearbox=? WHERE id=? AND deleted IS NULL");
+		$stmt->bind_param("ssssi", $series, $year, $color, $power, $gearbox, $id);
 		
 		// kas õnnestus salvestada
 		if($stmt->execute()){

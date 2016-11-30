@@ -1,3 +1,28 @@
+<?php
+
+	require("../functions.php");
+
+	require("../class/user.class.php");
+	$User = new User($mysqli);
+	
+	if (isset ($_SESSION["userId"])){
+		
+			header("Location: homepage.php");
+	}
+	
+	if ( isset($_POST["loginEmail"]) &&
+		 isset($_POST["loginPassword"]) &&
+		 !empty($_POST["loginEmail"]) &&
+		 !empty($_POST["loginPassword"])
+	  ) {
+		
+		//login sisse
+		$error = login($_POST["loginEmail"], $_POST["loginPassword"]);
+		
+	}
+?>
+
+
 <!DOCTYPE html>
 <?php require("../header.php"); ?>
 

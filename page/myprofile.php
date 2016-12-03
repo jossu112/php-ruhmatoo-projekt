@@ -8,7 +8,22 @@
 	require("../class/Helper.class.php");
 	$Helper = new Helper();
 	
+		//kui ei ole kasutaja id'd
+	if (!isset($_SESSION["userId"])){
+		
+		//suunan sisselogimise lehele
+		header("Location: login.php");
+		exit();
+	}
 	
+	
+	//kui on ?logout aadressireal siis login välja
+	if (isset($_GET["logout"])) {
+		
+		session_destroy();
+		header("Location: login.php");
+		exit();
+	}
 	
 	
 	

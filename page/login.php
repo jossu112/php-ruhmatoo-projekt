@@ -9,6 +9,7 @@
 	if (isset ($_SESSION["userId"])){
 		
 			header("Location: homepage.php");
+			exit();
 	}
 	
 	if ( isset($_POST["loginEmail"]) &&

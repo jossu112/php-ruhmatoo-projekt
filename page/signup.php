@@ -92,7 +92,7 @@
 	
 ?>
 
-<h1>Loo kasutaja</h1>
+
 <?php require("../header.php"); ?>
 
 <div class="container">

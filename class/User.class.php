@@ -50,7 +50,7 @@ class User {
 				$_SESSION["message"] = "<h1>Tere tulemast!</h1>";
 				
 				header("Location: homepage.php");
-				exit();
+				
 				
 			}else {
 				$error = "vale parool";

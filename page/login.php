@@ -2,6 +2,7 @@
 
 	require("../functions.php");
 	require("../class/Helper.class.php");
+	$Helper = new Helper();
 	require("../class/User.class.php");
 	$User = new User($mysqli);
 	

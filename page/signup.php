@@ -54,8 +54,6 @@
  		
  		$password = hash("sha512", $_POST["signupPassword"]);
  		
- 		echo "parool ".$_POST["signupPassword"]."<br>";
- 		echo "räsi ".$password."<br>";
  		
  		//echo $serverPassword;
  		

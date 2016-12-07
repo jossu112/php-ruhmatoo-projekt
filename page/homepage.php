@@ -36,7 +36,7 @@
 						
 				
 	
-	Tere tulemast <a href="myprofile.php"><?=$_SESSION["userEmail"];?>!</a>
+	Tere tulemast <?=$_SESSION["userEmail"];?>!
 	<a href="?logout=1">Logi välja</a>
 </p>
 
@@ -45,8 +45,8 @@
 
 <h2>Top 5</h2>
 <br><br>
-<h2>Minu Bemm</h2>
+<h2><a href="myprofile.php">Minu Bemm</a></h2>
 <br><br>
-<h2>Hinda Bemme</h2>
+<h2><a href="ratingpage.php">Hinda Bemme</a></h2>
 <br><br>
 <?php require("../footer.php"); ?>

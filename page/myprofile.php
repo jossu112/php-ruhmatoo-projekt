@@ -90,18 +90,8 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
             echo "Sorry, there was an error uploading your file.";
         }
     }
-
 }
 ?>
-
-
-
-
-
-
-
-
-
 
 <?php require("../header.php"); ?>
 
@@ -154,7 +144,10 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 			<input type="file" name="fileToUpload" id="fileToUpload">
 			<br><br>
 			<input type="submit" value="Upload Image" name="submit">
-		</form>		
+		</form>	
+			
+	
+		 
 		
 			
 	</body>

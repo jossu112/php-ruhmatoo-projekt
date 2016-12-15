@@ -81,11 +81,29 @@ class Car {
 		$stmt->close();
 		
 	}
+
+	function saveimagename	($imagename) {
+		
+		$stmt = $this->connection->prepare("INSERT INTO cars (imagename, user_id) VALUES (?, ?)");
+	
+		echo $this->connection->error;
+		
+		$stmt->bind_param("si", $imagename, $_SESSION["userId"]);
+		
+		if($stmt->execute()) {
+			echo "salvestamine õnnestus";
+		} else {
+		 	echo "ERROR ".$stmt->error;
+		}
+		
+		$stmt->close();
+		
+	}	
 	
 	function updateCar($id, $series, $year, $color, $power, $gearbox){
     	
 		$stmt = $this->connection->prepare("UPDATE cars SET series=?, year=?, color=?, power=?, gearbox=? WHERE id=? AND deleted IS NULL");
-		$stmt->bind_param("sisii", $id, $series, $year, $color, $power, $gearbox);
+		$stmt->bind_param("sisisi", $id, $series, $year, $color, $power, $gearbox);
 		
 		// kas õnnestus salvestada
 		if($stmt->execute()){

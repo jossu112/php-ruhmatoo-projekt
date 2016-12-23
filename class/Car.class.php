@@ -71,11 +71,16 @@ class Car {
 		echo $this->connection->error;
 		
 		$stmt->bind_param("sisisi", $series, $year, $color, $power, $gearbox, $_SESSION["userId"]);
-		
+		if (mysql_errno() == 1062) {
+			echo 'no way!';
+		}
 		if($stmt->execute()) {
 			echo "salvestamine õnnestus";
 		} else {
 		 	echo "ERROR ".$stmt->error;
+			if (!$stmt){
+				echo "daam";
+			}
 		}
 		
 		$stmt->close();
@@ -84,14 +89,14 @@ class Car {
 
 	function saveimagename	($imagename) {
 		
-		$stmt = $this->connection->prepare("INSERT INTO cars (imagename, user_id) VALUES (?, ?)");
+		$stmt = $this->connection->prepare("UPDATE cars SET imagename=? WHERE user_id=? AND deleted IS NULL");
 	
-		echo $this->connection->error;
+		
 		
 		$stmt->bind_param("si", $imagename, $_SESSION["userId"]);
 		
 		if($stmt->execute()) {
-			echo "salvestamine õnnestus";
+			echo "<br>Pildi salvestamine õnnestus";
 		} else {
 		 	echo "ERROR ".$stmt->error;
 		}

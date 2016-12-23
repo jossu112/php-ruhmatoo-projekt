@@ -78,9 +78,6 @@ class Car {
 			echo "salvestamine õnnestus";
 		} else {
 		 	echo "ERROR ".$stmt->error;
-			if (!$stmt){
-				echo "daam";
-			}
 		}
 		
 		$stmt->close();

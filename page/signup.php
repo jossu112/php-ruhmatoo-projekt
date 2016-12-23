@@ -115,6 +115,9 @@
 			<br> <br>
 			
 			<input type="submit" value="Loo kasutaja">
+			
+			<br><br>
+			<a href = "login.php" > Tagasi sisselogimise lehele </a>
 		</form>
 			
 

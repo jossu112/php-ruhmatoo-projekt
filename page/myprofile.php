@@ -41,9 +41,6 @@
 		$Car->save($Helper->cleanInput($_POST["series"]), $Helper->cleanInput($_POST["year"]), $Helper->cleanInput($_POST["color"]), $Helper->cleanInput($_POST["power"]), $Helper->cleanInput($_POST["gearbox"])); 
 		
 	}
-	if (isset($_POST["imagename"])){
-		echo "kakaduu";
-	}
 
 if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 	

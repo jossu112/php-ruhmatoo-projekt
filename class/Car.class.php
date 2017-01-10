@@ -72,8 +72,9 @@ class Car {
 		
 		$stmt->bind_param("sisisi", $series, $year, $color, $power, $gearbox, $_SESSION["userId"]);
 		if (mysql_errno() == 1062) {
-			echo 'no way!';
+			echo "no way!";
 		}
+		
 		if($stmt->execute()) {
 			echo "salvestamine õnnestus";
 		} else {

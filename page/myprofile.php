@@ -24,6 +24,7 @@
 		header("Location: login.php");
 		exit();
 	}
+	
 
 	if ( isset($_POST["series"]) && 
 		isset($_POST["year"]) && 
@@ -41,7 +42,7 @@
 		$Car->save($Helper->cleanInput($_POST["series"]), $Helper->cleanInput($_POST["year"]), $Helper->cleanInput($_POST["color"]), $Helper->cleanInput($_POST["power"]), $Helper->cleanInput($_POST["gearbox"])); 
 		
 	}
-
+	$uploadOk = 0;
 if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 	
 	
@@ -94,9 +95,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 			
 			
 			$imagename = basename( $_FILES["fileToUpload"]["name"]);
-			if ($uploadOk != 0) {
-			echo "<img src='" .$target_dir. "/"	.$imagename. "'>";
-			}
+			
 			
 			$Car->saveimagename ($imagename);
 			//kuidagi nii saab failist pilti nime järgi kutsuda välja *style ei funktsioneeri		
@@ -122,7 +121,6 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 				<body>
 					
 					
-
 					<h1>Informatsioon</h1>
 					<form method="POST">
 						
@@ -162,17 +160,29 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 						<input class="btn btn-success" type="submit" value="SALVESTA" onclick="javascript:location.href=login.php">
 						
 						<br><br> 
-
+						
 					</form>
+					
 		</div>
 		<div class="col-sm-6">
 		<img src="Logo.png" alt="BWM logo" style="...">
-					<form action="myprofile.php" method="POST" enctype="multipart/form-data">
+		<br><br>
+						
+						<form action="myprofile.php" method="POST" enctype="multipart/form-data">
 						Valige pilt:
 						<input type="file" name="fileToUpload" id="fileToUpload">
 						<br><br>
 						<input class="btn btn-success" type="submit" value="Upload Image" name="submit">
-					</form>	
+						</form>
+					
+					<?php
+					if ($uploadOk != 0) {				
+						echo "<img src='" .$target_dir. "/"	.$imagename. "'>"; 
+					} else {
+						echo " ";
+					}
+					?>
+					
 						
 					 
 					

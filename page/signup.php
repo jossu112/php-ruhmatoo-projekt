@@ -95,11 +95,10 @@
 
 <div class="container">
     <div class="row">
-        <div align="center">
-		
-			<div class="col-sm-4 col-md-3">
-
-			<form method="POST">
+        <div class="col-md-6">
+            <img src="Logo.png" alt="BWM logo" style="...">
+        </div>
+        <div class="col-md-3">
 			<h1>Loo kasutaja</h1>
 
 <form method="POST">

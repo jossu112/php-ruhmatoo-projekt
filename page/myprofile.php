@@ -195,4 +195,3 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 	</div>	
 </div>	
 <?php require("../footer.php"); ?>
-

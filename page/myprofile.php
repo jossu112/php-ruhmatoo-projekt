@@ -165,7 +165,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 
 					</form>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-6 col-md-3">....</div>
 		<img src="Logo.png" alt="BWM logo" style="...">
 					<form action="myprofile.php" method="POST" enctype="multipart/form-data">
 						Valige pilt:

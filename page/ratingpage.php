@@ -32,7 +32,6 @@
 	}
 	</style>
 	<?php require("../header.php"); ?>
-	<?php require("../navbar.php"); ?>
 <div class="container">
 	<div class="row">
 
@@ -66,23 +65,6 @@
 <html>
 <body>
 
-			
-
-<h2>BMW2</h2>
-<img src="bmw2.jpg" alt="BMW" style="width:400px;height:228px;">
-<div class="stars">
-     <input class="star star-5" id="grade-5" type="radio" value="5" name="grade">
-     <label class="star star-5" for="grade-5"></label>
-     <input class="star star-4" id="grade-4" type="radio" value="4" name="grade">
-     <label class="star star-4" for="grade-4"></label>
-     <input class="star star-3" id="grade-3" type="radio" value="3" name="grade">
-     <label class="star star-3" for="grade-3"></label>
-     <input class="star star-2" id="grade-2" type="radio" value="2" name="grade">
-     <label class="star star-2" for="grade-2"></label>
-     <input class="star star-1" id="grade-1" type="radio" value="1" name="grade">
-     <label class="star star-1" for="grade-1"></label>
-   </div><br>
-</body>
 </html>
 
 

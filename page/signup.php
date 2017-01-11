@@ -1,3 +1,8 @@
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">
+    <img src="Logo.png" width="60" height="60" alt="BMW logo">
+  </a>
+</nav>
 <?php	
 	require("../../../config.php");
 	
@@ -73,7 +78,7 @@
  		// i - integer
  		// d - double/float
  		$stmt->bind_param("sss", $signupEmail, $password, $created);
- 		
+
  		if ($stmt->execute()) {
  				
  			echo "salvestamine õnnestus";
@@ -92,11 +97,7 @@
 
 
 <?php require("../header.php"); ?>
-<nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="#">
-    <img src="Logo.png" width="60" height="60" alt="BMW logo">
-  </a>
-</nav>
+
 
 <div class="container">
     <div class="row">
@@ -118,10 +119,10 @@
 			
 			<br> <br>
 			
-			<input type="submit" value="Loo kasutaja">
+			<input type="submit" value="Loo kasutaja" class="btn btn-success">
 			
 			<br><br>
-			<a href = "login.php" > Tagasi sisselogimise lehele </a>
+			<a href = "login.php" class="btn btn-danger" > Tagasi sisselogimise lehele </a>
 		</form>
 			
 

@@ -1,3 +1,8 @@
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">
+    <img src="Logo.png" width="60" height="60" alt="BMW logo">
+  </a>
+</nav>
 <?php
 
 	require("../functions.php");
@@ -25,11 +30,6 @@
 ?>
 
 <?php require("../header.php"); ?>
-<nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="#">
-    <img src="Logo.png" width="60" height="60" alt="BMW logo">
-  </a>
-</nav>
 
 
 
@@ -58,11 +58,11 @@
 			
 			<br> <br>
 			
-			<input type="submit" value="Logi sisse">
+			<input type="submit" value="Logi sisse" class="btn btn-success">
 			<br><br>
 			
 			
-			<a href = "signup.php" > Loo kasutaja </a>
+			<a href = "signup.php" class="btn btn-danger" > Loo kasutaja </a>
 			
 		</form>
 		

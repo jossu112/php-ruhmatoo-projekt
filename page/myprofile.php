@@ -82,7 +82,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
         $uploadOk = 0;
     }
     // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 10000000) {
+    if ($_FILES["fileToUpload"]["size"] > 1000000) {
         echo "Vabandust pildi fail on liiga suur.";
         $uploadOk = 0;
     }
@@ -124,6 +124,41 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 
 <?php require("../header.php"); ?>
 
+<?php
+	$html = "<table class='table table-striped'>";
+	
+	$html .= "<tr>";
+		$html .= "<th>seeria</th>";
+		$html .= "<th>aasta</th>";
+		$html .= "<th>värv</th>";
+		$html .= "<th>võimsus</th>";
+		$html .= "<th>käigukast</th>";
+	$html .= "</tr>";
+	//iga liikme kohta massiivis
+	foreach($carData as $c){
+		// iga auto on $c
+		//echo $c->plate."<br>";
+		
+		$html .= "<tr>";
+			$html .= "<th>".$c->series."</th>";
+			$html .= "<th>".$c->year."</th>";
+			$html .= "<th>".$c->color."</th>";
+			$html .= "<th>".$c->power."</th>";
+			$html .= "<th>".$c->gearbox."</th>";
+			
+		$html .= "</tr>";
+		if ($c->imagename != ""){
+			echo "<img src='" .$target_dir. "/"	.$c->imagename. "'>";
+		}else{
+			echo " ";
+		}
+	}
+	$html .= "</table>";
+	echo $html;
+	
+	
+?>	
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6">
@@ -137,6 +172,9 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 					
 					<h1>Informatsioon</h1>
 					<form method="POST">
+					<b>1. SAMM</b>
+					<br>
+					Sisesta auto informatsioon
 
 						<div class="form-group">
 							<label for="series">Seeria</label><br>
@@ -180,7 +218,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 		<div class="col-sm-6">
 		<img src="Logo.png" alt="BWM logo" style="...">
 		<br><br>
-
+		<b>2. SAMM</b>
 						
 						<form action="myprofile.php" method="POST" enctype="multipart/form-data">
 						Valige pilt:
@@ -208,33 +246,4 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 		</div>
 	</div>	
 </div>
-<?php
-	$html = "<table class='table table-striped'>";
-	
-	$html .= "<tr>";
-		$html .= "<th>seeria</th>";
-		$html .= "<th>aasta</th>";
-		$html .= "<th>värv</th>";
-		$html .= "<th>võimsus</th>";
-		$html .= "<th>käigukast</th>";
-	$html .= "</tr>";
-	
-	//iga liikme kohta massiivis
-	foreach($carData as $c){
-		// iga auto on $c
-		//echo $c->plate."<br>";
-		
-		$html .= "<tr>";
-			$html .= "<th>".$c->series."</th>";
-			$html .= "<th>".$c->year."</th>";
-			$html .= "<th>".$c->color."</th>";
-			$html .= "<th>".$c->power."</th>";
-			$html .= "<th>".$c->gearbox."</th>";
-			
-		$html .= "</tr>";
-	}
-	
-	$html .= "</table>";
-	echo $html;
-?>	
 <?php require("../footer.php"); ?>

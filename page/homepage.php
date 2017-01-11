@@ -45,12 +45,19 @@
 </p>
 
 
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
 
-
-<h2>Top 5</h2>
-<br><br>
-<h2><a href="myprofile.php">Minu Bemm</a></h2>
-<br><br>
-<h2><a href="ratingpage.php">Hinda Bemme</a></h2>
-<br><br>
+			<h2>Top 5</h2>
+			
+		</div>	
+		<div class="col-sm-6">	
+			<h2><a href="myprofile.php" class="btn btn-primary btn-block">Minu Bemm</a></h2>
+			<br><br>
+			<h2><a href="ratingpage.php" class="btn btn-primary btn-block">Hinda Bemme</a></h2>
+			<br><br>
+		</div>
+	</div>	
+</div>	
 <?php require("../footer.php"); ?>

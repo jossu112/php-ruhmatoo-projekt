@@ -164,7 +164,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 					</form>
 					
 		</div>
-		<div class="col-sm-6">
+		<div class="col-md-6">
 		<img src="Logo.png" alt="BWM logo" style="...">
 		<br><br>
 						

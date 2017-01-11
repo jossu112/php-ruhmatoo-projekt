@@ -92,6 +92,11 @@
 
 
 <?php require("../header.php"); ?>
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">
+    <img src="Logo.png" width="60" height="60" alt="BMW logo">
+  </a>
+</nav>
 
 <div class="container">
     <div class="row">

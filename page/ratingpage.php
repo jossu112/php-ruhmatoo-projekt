@@ -32,6 +32,8 @@
 	}
 	</style>
 	
+	<?php require("../navbar.php"); ?>
+	
 	<div class="stars">
 
 					<input class="star star-5" id="grade-5" type="radio" value="5" name="grade">

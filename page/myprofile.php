@@ -110,6 +110,8 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 
 
 <?php require("../header.php"); ?>
+<?php require("../navbar.php"); ?>
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6">
@@ -123,9 +125,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 					
 					<h1>Informatsioon</h1>
 					<form method="POST">
-						
-						Tagasi eelmisele lehele <a href="homepage.php"><?=$_SESSION["userEmail"];?>!</a>
-						<br><br>
+
 						<div class="form-group">
 							<label for="series">Seeria</label><br>
 							<select class="form-control" id="series" name="series">
@@ -164,9 +164,11 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 					</form>
 					
 		</div>
+		<br><br><br><br>
 		<div class="col-sm-6">
 		<img src="Logo.png" alt="BWM logo" style="...">
 		<br><br>
+
 						
 						<form action="myprofile.php" method="POST" enctype="multipart/form-data">
 						Valige pilt:

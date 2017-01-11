@@ -10,11 +10,11 @@
 ### Nõuded
 
 1. **README.md sisaldab:**
-    * suurelt projekti nime;
+    * NORM BEMM
     * suurelt projekti veebirakenduse pilt;
-    * rühma liikmete nimed;
-    * eesmärki (3-4 lauset, mis probleemi üritate lahendada);
-    * kirjeldus (sihtrühm, eripära võrreldes teiste samalaadsete rakendustega – kirjeldada vähemalt 2-3 sarnast rakendust mida eeskujuks võtta);
+    * Johan Reili, Kristjan Känd, Jan Treiberg
+    * Püüdsime lahendada BMW ossidele probleemi, kus kohas hinnata teiste osside bemme
+    * kirjeldus (BMW omanikud, eripära võrreldes teiste samalaadsete rakendustega - sobib ainult BMW omanikele – kirjeldada vähemalt 2-3 sarnast rakendust mida eeskujuks võtta);
     * funktsionaalsuse loetelu prioriteedi järjekorras, nt
         * v0.1 Saab teha kasutaja ja sisselogida
         * v0.2 Saab lisada huviala

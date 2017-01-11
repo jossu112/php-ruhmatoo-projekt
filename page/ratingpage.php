@@ -51,7 +51,6 @@
 <body>
 
 <h2>BMW1</h2>
-<img src="<?php echo $path . $img ?>" alt="" style="width:350px;height:228px;" />
 <img src="bmw1.jpg" alt="BMW" style="width:350px;height:228px;">
 <div class="stars">
      <input class="star star-5" id="grade-5" type="radio" value="5" name="grade">

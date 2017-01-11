@@ -32,6 +32,7 @@
 	}
 	</style>
 	<?php require("../header.php"); ?>
+	<?php require("../navbar.php"); ?>
 <div class="container">
 	<div class="row">
 

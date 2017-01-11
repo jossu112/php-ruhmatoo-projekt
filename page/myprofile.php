@@ -1,5 +1,5 @@
 <?php
-	
+	require("../navbar.php");
 	require("../functions.php");
 	
 	require("../class/Car.class.php");
@@ -42,7 +42,20 @@
 		$Car->save($Helper->cleanInput($_POST["series"]), $Helper->cleanInput($_POST["year"]), $Helper->cleanInput($_POST["color"]), $Helper->cleanInput($_POST["power"]), $Helper->cleanInput($_POST["gearbox"])); 
 		
 	}
+	
+	$sort = "id";
+	$order = "ASC";
+	
+	if(isset($_GET["sort"]) && isset($_GET["order"])) {
+		$sort = $_GET["sort"];
+		$order = $_GET["order"];
+	}
+	
+	//otsisõna fn sisse
+	$carData = $Car->get($sort, $order);
+	
 	$uploadOk = 0;
+	$target_dir = "uploads/";
 if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 	
 	
@@ -59,29 +72,29 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
             //echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
         } else {
-            echo "File is not an image.";
+            echo "Tegemist ei ole pildifailiga.";
             $uploadOk = 0;
         }
     }
     // Check if file already exists
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+        echo "Sellise nimega pilt on juba olemas.";
         $uploadOk = 0;
     }
     // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 1000000) {
-        echo "Sorry, your file is too large.";
+    if ($_FILES["fileToUpload"]["size"] > 10000000) {
+        echo "Vabandust pildi fail on liiga suur.";
         $uploadOk = 0;
     }
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "JPG" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        echo "Vabandust, ainult JPG, JPEG, PNG & GIF on lubatud.";
         $uploadOk = 0;
     }
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
+        echo "Teie pildi üleslaadimine ebaõnnestus.";
     // if everything is ok, try to upload file
     } else {
 		
@@ -102,7 +115,7 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 			//echo "<img src=" .$target_dir. "/"	.$imagename. "style=width:350px;height:228px;>";
             
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Teie pildi üleslaadimisel esines error.";
         }
     }
 }
@@ -110,7 +123,6 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 
 
 <?php require("../header.php"); ?>
-<?php require("../navbar.php"); ?>
 
 <div class="container">
 	<div class="row">
@@ -195,5 +207,34 @@ if(isset($_FILES["fileToUpload"]) && !empty($_FILES["fileToUpload"]["name"])){
 			</html>
 		</div>
 	</div>	
-</div>	
+</div>
+<?php
+	$html = "<table class='table table-striped'>";
+	
+	$html .= "<tr>";
+		$html .= "<th>seeria</th>";
+		$html .= "<th>aasta</th>";
+		$html .= "<th>värv</th>";
+		$html .= "<th>võimsus</th>";
+		$html .= "<th>käigukast</th>";
+	$html .= "</tr>";
+	
+	//iga liikme kohta massiivis
+	foreach($carData as $c){
+		// iga auto on $c
+		//echo $c->plate."<br>";
+		
+		$html .= "<tr>";
+			$html .= "<th>".$c->series."</th>";
+			$html .= "<th>".$c->year."</th>";
+			$html .= "<th>".$c->color."</th>";
+			$html .= "<th>".$c->power."</th>";
+			$html .= "<th>".$c->gearbox."</th>";
+			
+		$html .= "</tr>";
+	}
+	
+	$html .= "</table>";
+	echo $html;
+?>	
 <?php require("../footer.php"); ?>

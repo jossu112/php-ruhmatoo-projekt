@@ -25,6 +25,65 @@ class Car {
 		
 		
 	}
+	
+	function get($sort, $order) {
+		
+		$allowedSort = ["series", "year", "color", "power", "gearbox", "imagename"];
+		
+		if(!in_array($sort, $allowedSort)){
+			//ei ole lubatud tulp
+			$sort = "year";
+		}
+		
+		$orderBy = "ASC";
+		
+		if($order == "DESC"){
+			$orderBy = "DESC";
+		}
+		
+		
+			$stmt = $this->connection->prepare("
+				SELECT series, year, color, power, gearbox, imagename
+				FROM cars
+				WHERE user_id=$_SESSION[userId] AND deleted IS NULL
+				ORDER BY $sort $orderBy
+			");
+		
+	
+		
+		echo $this->connection->error;
+		
+		$stmt->bind_result($series, $year, $color, $power, $gearbox, $imagename);
+		$stmt->execute();
+		
+		
+		//tekitan massiivi
+		$result = array();
+		
+		// tee seda seni, kuni on rida andmeid
+		// mis vastab select lausele
+		while ($stmt->fetch()) {
+			
+			//tekitan objekti
+			$car = new StdClass();
+			
+			$car->series = $series;
+			$car->year = $year;
+			$car->color = $color;
+			$car->power = $power;
+			$car->gearbox = $gearbox;
+			$car->imagename = $imagename;
+			
+			//echo $plate."<br>";
+			// iga kord massiivi lisan juurde nr märgi
+			array_push($result, $car);
+		}
+		
+		$stmt->close();
+		
+		
+		return $result;
+	}
 		
 	
 	

@@ -10,18 +10,96 @@
 ### Nõuded
 
 1. **README.md sisaldab:**
-    * NORM BEMM
+    * Veebirakenduse nimi - NORM BEMM
     * suurelt projekti veebirakenduse pilt;
     * Johan Reili, Kristjan Känd, Jan Treiberg
     * Püüdsime lahendada BMW ossidele probleemi, kus kohas hinnata teiste osside bemme
     * kirjeldus (BMW omanikud, eripära võrreldes teiste samalaadsete rakendustega - sobib ainult BMW omanikele – kirjeldada vähemalt 2-3 sarnast rakendust mida eeskujuks võtta);
-    * funktsionaalsuse loetelu prioriteedi järjekorras, nt
-        * v0.1 Saab teha kasutaja ja sisselogida
-        * v0.2 Saab lisada huviala
-        * ...
+   
     * andmebaasi skeem loetava pildina + tabelite loomise SQL laused (kui keegi teine tahab seda tööle panna);
-    * **kokkuvõte:** mida õppisid juurde? mis ebaõnnestus? mis oli keeruline? (kirjutab iga tiimi liige).
+	Skeem: ![alt tag](http://imgur.com/I8KN3tp)
+	SQL laused: 
+	CREATE TABLE cars (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	user_id INT,
+	series VARCHAR(10),
+	year INT,
+	color VARCHAR(7),
+	power INT,
+	gearbox VARCHAR(10),
+	deleted DATE,
+	imagename VARCHAR(50)
+	);
+	CREATE INDEX user_id
+	ON cars (user_id);
 
+	CREATE TABLE like(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	status_id INT(10),
+	meeldib INT(10),
+	ei_meeldi INT(10)
+	);
+	
+	CREATE TABLE signup(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	email VARCHAR(225),
+	password VARCHAR(225),
+	created TIMESTAMP,
+	UNIQUE (email)
+	);
+	
+    * **kokkuvõte:** mida õppisid juurde? mis ebaõnnestus? mis oli keeruline? (kirjutab iga tiimi liige).
+	Kristjan:
+
+-- Mida õppisin juurde?
+
+Õppisin juurde palju üldteadmisi PHP-st ja sain kindlasti rohkem aimu, kuidas lehekülgede valmistamine käib. Olen õnnelik,
+et aine oli õppekavas, sest usun, et veebiprogrammeerimise teadmised tulevad kindlasti hiljem kasuks.
+
+-- Mis ebaõnnestus?
+
+Ebaõnnestus hindamissüsteemi ülesseadmine.
+
+-- Mis oli keeruline?
+
+Kõige keerulisem oli tegeleda hindamissüsteemiga, sest seda polnud me tunnis õppinud
+ning pidime õpetusi otsima internetist. Leitud õpetustes oli tarvis ka muid programmeerimiskeeli,
+mida varem õppinud pole.
+
+Johan:
+
+-- Mida õppisin juurde?
+
+Õppisin tundma PHP-d ja HTML-i. Õppisin, kuidas luua veebilehekülge ja palju muud, mis käib veebilehekülje loomise
+ja ülalpidamise juurde. Olen väga rahul, et aine oli õppekavas, kuna tean, et seal õpitud teadmised tulevad tulevikus
+kindlasti kasuks.
+
+-- Mis ebaõnnestus?
+
+Enda veebbilehekülje loomisel ebaõnnestus luua töötavat hindamissüsteemi veebilehe funktsionaalsuse täitmiseks.
+
+-- Mis oli keeruline?
+
+Kõige keerulisemaks osutus iseseisvalt veebilehe loomine. See oli mahukas ülesanne ja minu jaoks kohati
+keeruline, kuna enne kursust olid mu oskused nullilähedased ja meie projektis esines ülesandeid, mille lahendamine oli 
+minu jaoks raske. Nt. piltide andmebaasi salvestamine ja veebilehel kuvamine.
+
+Jan:
+
+-- Mida õppisin juurde?
+
+Õppisin üleüldse tundma PHP ja HTML-i kõige algelisemaid asju. Kuna varem mul ei olnud kokkupuudet sellega olnud, siis kõik oli minu jaoks
+uus.
+
+-- Mis ebaõnnestus?
+
+Konkreetiselt ebaõnnestus hindamislehe tegemine
+
+-- Mis oli keeruline?
+
+Kõige keerulisemaks osutus iseseisvalt veebilehe loomine. See oli mahukas ülesanne ja minu jaoks kohati
+keeruline, kuna enne kursust olid mu oskused nullilähedased ja meie projektis esines ülesandeid, mille lahendamine oli 
+minu jaoks raske. Nt. piltide andmebaasi salvestamine ja veebilehel kuvamine.
 
 2. **Veebirakenduse nõuded:**
     * rakendus on terviklik (täidab mingit funktsiooni ja sellega saab midagi teha);

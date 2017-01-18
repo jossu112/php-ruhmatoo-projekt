@@ -17,7 +17,7 @@
     * kirjeldus (BMW omanikud, eripära võrreldes teiste samalaadsete rakendustega - sobib ainult BMW omanikele – kirjeldada vähemalt 2-3 sarnast rakendust mida eeskujuks võtta);
    
     * andmebaasi skeem loetava pildina + tabelite loomise SQL laused (kui keegi teine tahab seda tööle panna);
-	Skeem: ![alt tag](http://imgur.com/I8KN3tp)
+	Skeem: ![alt tag](https://i.imgsafe.org/f156d3f148.png)
 	SQL laused: 
 	CREATE TABLE cars (
 	id INT AUTO_INCREMENT PRIMARY KEY,
